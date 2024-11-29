@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Single Integration Test",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "--runInBand",
+        "--forceExit",
+        "--config",
+        "${workspaceFolder}/jest.config.js",
+        "${file}"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "sourceMaps": true,
+      "env": {
+        "NODE_ENV": "test",
+        "NODE_OPTIONS": "--experimental-vm-modules",
+        "TEST_STATIC_DB_NAME": "medusa_test_static_1"
+      }
+    },
+  ]
+}
